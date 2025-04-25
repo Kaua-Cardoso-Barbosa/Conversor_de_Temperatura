@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de temperatura</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Conversor de temperatura</h1>
+        <form action="/temperatura" method="post">
+            <label for="celsius">Digite a temperatura em Celsius:</label>
+            <input type="number" id="celsius" name="celsius" step="0.01" required>
+
+            <button type="submit">Calcular</button>
+        </form>
+
+        {% if kelvin or fahrenheit %}
+        <div class="resultado">
+            <h2>Resultado</h2>
+            <p><strong>Kelvin:</strong> {{ kelvin }}</p>
+            <p><strong>Fahrenheit:</strong> {{ fahrenheit }}</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
